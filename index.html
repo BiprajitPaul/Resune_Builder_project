@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resume Builder</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/87e68747d2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container bghead" id="cv-form">
+        <h1 class="text-center my-4">Resume Builder</h1>
+        <p class="text-center closeup">By Tuhin's Effort</p>
+        <div class=" text-center aboutThisPage">
+            <h2>ABOUT</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, blanditiis est non dolor distinctio enim veritatis omnis explicabo. Consequuntur quae voluptas deserunt officia beatae quos, recusandae architecto adipisci veniam illum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, corporis delectus quibusdam nostrum labore laboriosam vitae eaque aut soluta sapiente consequatur explicabo asperiores modi enim dignissimos recusandae. Aut eveniet optio, dolores voluptates iusto possimus nulla, magnam blanditiis corrupti, distinctio earum excepturi molestiae reprehenderit numquam totam similique nemo. Molestias iure facere velit illum placeat consectetur praesentium. Ut optio consequatur veniam, a magnam ullam ipsam quisquam magni nisi dolor sequi ducimus recusandae nulla debitis nam! Saepe omnis officiis delectus, dolores officia harum ullam neque consequatur aliquid eligendi voluptate a aspernatur debitis odio ex! Voluptates necessitatibus recusandae expedita culpa quaerat eaque, nam similique?</p>
+        </div>
+        <div class="text-center command ">
+            <h4>ENTER THE DETAILS , WHICH YOU WANT TO SHOW IN YOUR RESUME</h4>
+            <h2>👇</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Personal Information</h3>
+                <div class="form-group">
+                    <label for="nameField">Your Name</label>
+                    <input id="nameField" type="text" class="bgt form-control" placeholder="Tuhin Paul">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="contactField">Your Contact Number</label>
+                    <input id="contactField" type="number" class="bgt form-control" placeholder="+91XXXXXXXXXX">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="addressField">Your Address</label>
+                    <textarea id="addressField" class="bgt form-control" placeholder="Enter here..." rows="5"></textarea>
+                </div>
+                <div class="form-group my-4">
+                    <label for="">Profile Photo</label>
+                    <input id="imgField" type="file" class="bgt form-control">
+                </div>
+                <p class="text-secondary my-3">Important Links</p>
+                <div class="form-group">
+                    <label for="fbField">Facebook</label>
+                    <input id="fbField" type="text" class="bgt form-control" placeholder="Enter Your Facebook Id">
+                </div>
+                <div class="form-group">
+                    <label for="linkedinField">LinkedIn</label>
+                    <input id="linkedinField" type="text" class="bgt form-control" placeholder="Enter Your LinkedIn Id">
+                </div>
+                <div class="form-group">
+                    <label for="githubField">Github</label>
+                    <input id="githubField" type="text" class="bgt form-control" placeholder="Enter Your Github Id">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3>Profesitional Information</h3>
+                <div class="form-group">
+                    <label for="">Objective</label>
+                    <textarea rows="3" id="objectiveField" class="bgt form-control " placeholder="Enter Your Objective"></textarea>
+                </div>
+                <div class=" mt-4 form-group" id="we">
+                    <label for="">Work Experience</label>
+                    <textarea rows="3" class="bgt form-control weField" placeholder="Enter Your Experience"></textarea>
+                    <!-- New Text Area Dynamically -->
+
+                    <div id="weAddbutton" class="text-center container mt-2 ">
+                        <button onclick="addNewWeField()" class="btn btn-dark btn-sm">Add More</button>
+                    </div>
+                </div>
+                <div class=" mt-4 form-group" id="aq">
+                    <label for="">Academic Qualification</label>
+                    <textarea rows="3" class="bgt form-control aqField" placeholder="Enter Your Qualifications"></textarea>
+                    <!-- New Text Area Dynamically -->
+
+                    <div id="aqAddbutton" class="text-center container mt-2 ">
+                        <button onclick="addNewaqField()" class="btn btn-dark btn-sm">Add More</button>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        <div class="container text-center mt-5">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+        </div>
+    </div>
+
+
+    <!-- cv-template -->
+    <div class="container" id="cv-template">
+
+        <div class="row">
+            <div class="text-center col-md-3 py-5 background">
+                <!-- First Column -->
+                <img src="https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Image.png" alt="Profile Pic" class="img-fluid myImg" id="imgT">
+
+                <div class="subHead text-center container">
+                    <p id="nameT1">Name :-</p>
+                    <p id="contactT">Contact :-</p>
+                    <p id="addressT">Address:-</p>
+                    <hr>
+                    <p><a id="fbT" href="#"><i class="fa-brands fa-facebook"></i></a></p>
+                    <p><a id="linkedinT" href="#"><i class="fa-brands fa-linkedin"></i></a></p>
+                    <p><a id="githubT" href="#"><i class="fa-brands fa-github"></i></a></p>
+                </div>
+            </div>
+            <div class=" secName col-md-9 py-5">
+                <!-- 2nd Column -->
+                <h1 id="nameT2" class="text-center" style="font-weight: 300;">Name:-</h1>
+                <!-- Objective Card -->
+                <div class="card mt-3">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi molestias veritatis temporibus, minus est, pariatur impedit commodi atque at doloribus officiis cupiditate harum mollitia quo! Dignissimos, repellat adipisci est nulla aut perspiciatis neque repellendus pariatur et ad dicta facilis fugiat, quidem recusandae error! Incidunt neque, laboriosam omnis beatae quod corporis!</p>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-header background">
+                        <h3>Work Experince</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, qui.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, qui.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, qui.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Academic Qualification -->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="aqT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, qui.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, qui.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, qui.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container mt-3 text-center">
+                    <button onclick="printCV()" class="btn btn-dark btn-lg">Print CV</button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
